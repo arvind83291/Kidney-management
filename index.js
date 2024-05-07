@@ -1,28 +1,13 @@
 const express = require('express');
 const app =  express();
 
-function calculateSum(n){
-    let ans = 0;
-    for(let i =0;i<= n ; i++){
-        ans +=i;
-    }
-    return ans;
-}
-app.get('/calculateSum',function(req,res){
-    const n = req.query.n;
-    const ans = calculateSum(n);
-    res.send(ans.toString());
-})
-app.listen(3002);
-
-
 const users =[{
     user:'jay',
     kidneys:[{
         health:false
     }]
 }]
-app.use(express.json());
+app.use(express.json());// to read the body while using the post method
 app.get('/',function(req,res){
     const jayKidney = users[0].kidneys;
     
