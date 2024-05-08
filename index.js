@@ -18,26 +18,20 @@ app.get('/',function(req,res){
         if (jayKidney[i].health){
             numberOfHealthykidneys+=1;
         }
-        
     }
-    
 const unhealthyKidneys =numberofkidneys-numberOfHealthykidneys;
-   
     res.json({
         numberofkidneys,
         numberOfHealthykidneys,
         unhealthyKidneys
     })
 });
-
 app.post('/',function(req,res){
     const isHealthy = req.body.isHealthy;
     users[0].kidneys.push({health : isHealthy});
-
     res.json({
         "msg":"Added Sucesssfully"
     })
-   
 });
 
 app.put('/',function(req,res){
@@ -75,7 +69,6 @@ app.delete('/',function(req,res){
             "msg":"you do not have Unhealthy kidneys"
         });
     }
-    
 });
 
 function isEmptyKidney(){
@@ -87,8 +80,5 @@ function isEmptyKidney(){
     }
     // console.log(isEmpty);
     return isEmpty
-    
 };
-
-
 app.listen(3001);
